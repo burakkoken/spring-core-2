@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="person1" class="com.codnect.Person">
+		<property name="name" value="Burak Köken"></property>
+		<property name="age" value="23"></property>
+		<property name="address" ref="addresss"></property>
+	</bean>
+	
+	<bean id="person2" class="com.codnect.Person">
+		<property name="name" value="Şeyma Yılmaz"></property>
+		<property name="age" value="23"></property>
+		<property name="address">
+			<bean id="addresss" class="com.codnect.Address">
+				<property name="city" value="Sivas"></property>
+				<property name="street" value="Merkez"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="addresss" class="com.codnect.Address">
+		<property name="city" value="Kocaeli"></property>
+		<property name="street" value="İzmit"></property>
+	</bean>
+	
+</beans>
